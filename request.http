@@ -1,0 +1,9 @@
+POST http://localhost:5002/api/clients
+Content-Type: application/json
+
+{
+    "id_client" :1,
+    "id_chambre" :1,
+    "date_arrivee" :"2024-01-02",
+    "date_depart" :"2014-01-16"
+}
