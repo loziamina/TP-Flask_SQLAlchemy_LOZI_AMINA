@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  web:
+    # build: <chemin_vers_dossier_contenant_dockerfile>
+    build: .
+    volumes:
+      - ./src/reservation_chambre:/app/src/reservation_chambre
+    ports:
+    # - <HOST_PORT>:<CONTAINER_PORT>
+      - 5002:5000
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: reservation_des_chambres
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
